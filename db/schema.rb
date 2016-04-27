@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426192529) do
+ActiveRecord::Schema.define(version: 20160427191132) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "title"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20160426192529) do
     t.string   "albumart_content_type"
     t.integer  "albumart_file_size"
     t.datetime "albumart_updated_at"
-    t.integer  "song_id"
   end
 
   create_table "shows", force: :cascade do |t|
