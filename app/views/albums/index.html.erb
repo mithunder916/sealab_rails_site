@@ -2,18 +2,6 @@
 
 <h1>Albums</h1>
 
-<!-- <% @albums.each do |al| %>
-  <div class="jumbotron">
-  <h2><%= al.title %> <small>(<%= al.year %>)</small></h2>
-    <div class-"row">
-    <div class="col-md-6">
-  <%= image_tag al.albumart.url(:medium) %> </div>
-    <div class="col-md-6">
-    <% al.songs.each do |song| %>
-      <p><%= song.title %> <%= song.length %></p>
-    <% end %>   </div> </div> </div>
-<% end %> -->
-
 
 <% @albums.each do |al| %>
 <div class="jumbotron">
@@ -25,7 +13,6 @@
           <div class="col-md-6">
             <h4><%= song.title %> <small><%= song.length %></small></h4> </div>
         <% end %>
-</div> </div>
+</div>
+Download it <a href="https://sealab.bandcamp.com/">here.</a> </div>
 <% end %>
-
-<%= link_to 'New Album', new_album_path %>
