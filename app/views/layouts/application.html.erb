@@ -4,13 +4,14 @@
   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sealab</title
-  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" %>
+  <title>Sealab</title>
+  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" %>
+  <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
   <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -28,15 +29,19 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Music", songs_path, class: 'nav navbar-nav' %></li>
+        <li><%= link_to "Music", albums_path, class: 'nav navbar-nav' %></li>
         <li><%= link_to "Photos", photos_path, class: 'nav navbar-nav' %></li>
-        <li><%= link_to "Shows", showdates_path, class: 'nav navbar-nav' %></li>
+        <li><%= link_to "Shows", shows_path, class: 'nav navbar-nav' %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
           <ul class="dropdown-menu">
+            <% if user_signed_in? %>
+            <li><%= link_to "Edit Profile", edit_user_registration_path%></li>
             <li role="separator" class="divider"></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: "delete"%>
+                <% end %>
           </ul>
         </li>
       </ul>
@@ -44,17 +49,8 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-  <nav class="navbar navbar-default">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-  </nav>
+<div class='container'>
 <%= yield %>
-
+</div>
 </body>
 </html>
