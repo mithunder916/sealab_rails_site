@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :shows
   resources :albums
   resources :songs
   root 'home#index'
 
   get 'about'=>'home#about'
   get 'photos'=>'home#photos'
-  get 'showdates'=>'home#showdates'
+  get 'shows'=>'shows#index'
+  get 'albums'=>'albums#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -8,6 +8,4 @@ class HomeController < ApplicationController
   def photos
   end
 
-  def showdates
-  end
 end

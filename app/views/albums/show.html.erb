@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <strong>Title:</strong>
   <%= @album.title %>
@@ -10,10 +11,7 @@
   <%= @album.year %>
 </p>
 
-<p>
-  <strong>Tracklist:</strong>
-  <%= @album.tracklist %>
-</p>
+<%= image_tag @album.albumart.url(:medium) %>
 
 <%= link_to 'Edit', edit_album_path(@album) %> |
 <%= link_to 'Back', albums_path %>

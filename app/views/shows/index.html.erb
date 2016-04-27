@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Shows</h1>
+
+<div class="container">
+<div class="row">
+  <% @shows.each do |s| %>
+    <div class="col-md-4"><h3><%= s.location  %></h3></div>
+    <div class="col-md-2"><h3><%= s.showdate %></h3></div>
+    <div class="col-md-6"><h3><%= s.other_acts %></h3></div>
+  <% end %>
+</div>
+</div>
+
+<%= link_to 'New Show', new_show_path %>
